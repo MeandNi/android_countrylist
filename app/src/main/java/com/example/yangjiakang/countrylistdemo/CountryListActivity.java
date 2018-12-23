@@ -13,6 +13,7 @@ import android.widget.EditText;
 import com.example.yangjiakang.countrylistdemo.adapter.CountryAdpater;
 import com.example.yangjiakang.countrylistdemo.bean.CountryViewBean;
 import com.example.yangjiakang.countrylistdemo.utils.CountryUtils;
+import com.example.yangjiakang.countrylistdemo.utils.ToastUtil;
 import com.example.yangjiakang.countrylistdemo.utils.contact.ContactItemInterface;
 import com.example.yangjiakang.countrylistdemo.utils.contact.CountryListView;
 
@@ -60,14 +61,15 @@ public class CountryListActivity extends BaseActivity implements TextWatcher {
                 List<ContactItemInterface> searchList = inSearchMode ? filterList : contactList;
                 CountryViewBean countryViewBean = (CountryViewBean) searchList.get(position);
                 if (countryViewBean != null) {
-                    Intent intent = new Intent();
-                    intent.putExtra(PHONE_CODE, countryViewBean.getNumber());
-                    intent.putExtra(COUNTRY_NAME, countryViewBean.getCountryName());
-                    setResult(RESULT_OK, intent);
+//                    Intent intent = new Intent();
+//                    intent.putExtra(PHONE_CODE, countryViewBean.getNumber());
+//                    intent.putExtra(COUNTRY_NAME, countryViewBean.getCountryName());
+                    ToastUtil.shortToast(CountryListActivity.this, countryViewBean.getCountryName());
+//                    setResult(RESULT_OK, intent);
                 } else {
-                    setResult(RESULT_CANCELED);
+//                    setResult(RESULT_CANCELED);
                 }
-                finish();
+
             }
         });
 
