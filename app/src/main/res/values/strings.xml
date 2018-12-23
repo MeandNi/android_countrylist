@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CountryListDemo</string>
+    <string name="choose_country_code">国家选择</string>
+    <string name="search">搜索</string>
+</resources>
